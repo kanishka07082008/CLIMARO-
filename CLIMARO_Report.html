@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CLIMARO — Tools & Technology Stack Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @media print {
+      body { background: #fff !important; color: #000 !important; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+      line-height: 1.5;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 48px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+    }
+    .header {
+      background: #0b1528;
+      color: #fff;
+      padding: 28px 32px;
+      border-radius: 14px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+    .header p { color: #38bdf8; font-size: 13px; font-weight: 500; margin-top: 4px; }
+    .header .badge { background: #0284c7; color: #fff; font-size: 11px; font-weight: 700; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; }
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      border-left: 4px solid #0284c7;
+      padding-left: 12px;
+      margin: 28px 0 14px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    th {
+      background: #0f172a;
+      color: #fff;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      background: #fafafa;
+    }
+    tr:nth-child(even) td { background: #f8fafc; }
+    td strong { color: #0f172a; font-weight: 600; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; background: #e0f2fe; color: #0369a1; }
+    .keyless-box {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      padding: 16px 20px;
+      border-radius: 12px;
+      color: #065f46;
+      font-size: 13px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .print-btn {
+      background: #0284c7;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .print-btn:hover { background: #0369a1; }
+    .footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 11px;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+    <div class="header">
+      <div>
+        <h1>CLIMARO</h1>
+        <p>Real-Time Weather Intelligence & Forecast Dashboard</p>
+      </div>
+      <div class="badge">Architecture Report</div>
+    </div>
+
+    <div class="keyless-box">
+      <div>
+        <strong>✅ 100% Free & Keyless Architecture:</strong> This project requires <strong>NO API KEY</strong>. All weather data is retrieved in real-time directly from Open-Meteo's open-access meteorological endpoints.
+      </div>
+    </div>
+
+    <h2 class="section-title">1. Core Frontend Framework & Technologies</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tool / Technology</th>
+          <th>Version</th>
+          <th>Role in CLIMARO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>React</strong></td>
+          <td><span class="tag">^19.2.8</span></td>
+          <td>Declarative component architecture and reactive UI state management.</td>
+        </tr>
+        <tr>
+          <td><strong>TypeScript</strong></td>
+          <td><span class="tag">~6.0.2</span></td>
+          <td>Strict type safety, typed API responses, and compile-time error prevention.</td>
+        </tr>
+        <tr>
+          <td><strong>Vite</strong></td>
+          <td><span class="tag">^8.3.0</span></td>
+          <td>Next-generation frontend tooling, fast HMR dev server, and optimized ESM bundling.</td>
+        </tr>
+        <tr>
+          <td><strong>Tailwind CSS</strong></td>
+          <td><span class="tag">^3.4.17</span></td>
+          <td>Utility-first CSS design system with custom palette, glassmorphism, and dark mode.</td>
+        </tr>
+        <tr>
+          <td><strong>PostCSS & Autoprefixer</strong></td>
+          <td><span class="tag">^8.5 / ^10.6</span></td>
+          <td>Automates CSS preprocessing and vendor prefixing for cross-browser support.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">2. UI Libraries & Visualizations</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Library</th>
+          <th>Version</th>
+          <th>Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Recharts</strong></td>
+          <td><span class="tag">^3.10.1</span></td>
+          <td>Interactive 24-hour area chart for temperature, bar chart for rain chance, and line chart for wind.</td>
+        </tr>
+        <tr>
+          <td><strong>Lucide React</strong></td>
+          <td><span class="tag">^1.58.0</span></td>
+          <td>Clean, scalable SVG weather icons (Sun, Moon, CloudRain, Droplets, Wind, Gauge, etc.).</td>
+        </tr>
+        <tr>
+          <td><strong>Google Fonts (Inter)</strong></td>
+          <td><span class="tag">Weights 300–800</span></td>
+          <td>Modern typography for clean data readouts and digital clocks.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <h2 class="section-title">3. External APIs & Data Sources (No API Key Needed)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>API Service</th>
+          <th>Type</th>
+          <th>Functionality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Open-Meteo Forecast API</strong></td>
+          <td>Weather Endpoint</td>
+          <td>Real-time temperature, feels-like, humidity, wind, pressure, UV index, 24h hourly, and 7-day outlook.</td>
+        </tr>
+        <tr>
+          <td><strong>Open-Meteo Geocoding API</strong></td>
+          <td>Search Endpoint</td>
+          <td>Worldwide city search with instant matching suggestions and coordinates.</td>
+        </tr>
+        <tr>
+          <td><strong>OpenStreetMap Nominatim</strong></td>
+          <td>Reverse Geocoding</td>
+          <td>Resolves browser geolocation coordinates into human-readable city names.</td>
+        </tr>
+        <tr>
+          <td><strong>HTML5 Geolocation API</strong></td>
+          <td>Browser API</td>
+          <td>Captures current device position when user clicks "Current Location".</td>
+        </tr>
+        <tr>
+          <td><strong>localStorage API</strong></td>
+          <td>Browser Storage</td>
+          <td>Persists saved favorites, recent searches, °C/°F units, and light/dark theme.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">4. Components & Architecture Breakdown</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Component / Hook</th>
+          <th>File Path</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Header.tsx</strong></td>
+          <td><code>src/components/</code></td>
+          <td>Navbar with CLIMARO logo, live digital clock, °C/°F toggle, and theme switch.</td>
+        </tr>
+        <tr>
+          <td><strong>SearchBar.tsx</strong></td>
+          <td><code>src/components/</code></td>
+          <td>Debounced search bar with autocomplete suggestions and recent city chips.</td>
+        </tr>
+        <tr>
+          <td><strong>CurrentWeather.tsx</strong></td>
+          <td><code>src/components/</code></td>
+          <td>Hero card showing live temperature, condition, humidity, wind, and sunrise/sunset.</td>
+        </tr>
+        <tr>
+          <td><strong>HourlyForecast.tsx</strong></td>
+          <td><code>src/components/</code></td>
+          <td>Horizontally scrollable next 24 hours forecast with precipitation % and temperatures.</td>
+        </tr>
+        <tr>
+          <td><strong>WeeklyForecast.tsx</strong></td>
+          <td><code>src/components/</code></td>
+          <td>7-day outlook highlighting today with min-max temperature range bars.</td>
+        </tr>
+        <tr>
+          <td><strong>WeatherCharts.tsx</strong></td>
+          <td><code>src/components/</code></td>
+          <td>Recharts analytics tabs for temperature trend, rain probability, and wind metrics.</td>
+        </tr>
+        <tr>
+          <td><strong>Favorites.tsx</strong></td>
+          <td><code>src/components/</code></td>
+          <td>Modal drawer listing saved cities with 1-click weather loading.</td>
+        </tr>
+        <tr>
+          <td><strong>useWeather.ts</strong></td>
+          <td><code>src/hooks/</code></td>
+          <td>Custom React hook managing data fetching, loading, error, and refresh logic.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer">
+      <span>CLIMARO — Real-Time Weather Intelligence</span>
+      <span>Generated for Project Documentation</span>
+    </div>
+  </div>
+</body>
+</html>
